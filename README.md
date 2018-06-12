@@ -20,3 +20,42 @@ __.c / .cpp -> .asm -> .o -> .exe__
 --------|---------|-------|
 gcc(C) | gcc main.c class.c | a.exe (по умол. имя всегда 'a') |
 g++(C++) | g++ main.c class.c | a.exe|
+
+
+
+### Классы
+
+```cpp
+// class.h - объявление
+class MyClass {
+private: // модификатор доступа (инкапсуляция)
+  int myInt;
+  int *SecondInt;
+public:
+  void set(&a);
+  int get();
+  
+  MyClass(); // конструктор
+  ~MyClass(); // деструктор
+}
+```
+
+```cpp
+// class.cpp - реализация
+MyClass::set(&a){
+  myInt = a;
+}
+MyClass::get(){
+  return myInt;
+}
+MyClass::~MyClass(){
+  delete myInt; // освобождение памяти
+}
+```
+
+
+### Наследование
+
+```cpp
+class MySClass extends MyClass{ ... }
+```
